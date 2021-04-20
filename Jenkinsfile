@@ -7,9 +7,6 @@ pipeline {
                     image 'registry.cn-hangzhou.aliyuncs.com/louplus-linux/python:2-alpine'
                 }
             }
-            dir(path: '/home/shiyanlou/Code') {
-                git(credentialsId: '7fe344af-6134-4b88-899c-fd2adad914f9', url: 'git@github.com:chang2358/jenkins-python-app.git', branch: 'main')
-            }
             steps {
                 sh 'python -m py_compile sources/add2vals.py sources/calc.py'
             }
